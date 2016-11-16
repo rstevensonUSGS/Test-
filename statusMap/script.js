@@ -45,7 +45,7 @@ L.control.layers(basemaps, null, {
 var users = {};
 
 $.ajax({
-  url: "./data/users.json",
+  url: "./data_100616/users.json",
   async: false,
   dataType: 'json',
   success: function(data) {
@@ -146,7 +146,7 @@ $('#userlayers li').click(function() {
   if ($('#earnedBadges li').length) {
     $('#earnedBadges').empty();
   }
-  $.getJSON("./data/" + url + ".json", function(data) {
+  $.getJSON("./data_100616/" + url + ".json", function(data) {
     geojson = L.geoJson(data, {
       pointToLayer: function(feature, latlgn) {
         return L.circleMarker(latlgn, Style(feature)).bindPopup("<a href='" + feature.properties.link + "' target='_blank'>Point Information</a>");
